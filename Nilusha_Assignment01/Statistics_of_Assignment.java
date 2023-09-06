@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner;//import scanner class
 
 /**
  * Write a description of class Statistics_of_Assignment here.
@@ -9,36 +9,37 @@ import java.util.Scanner;
 public class Statistics_of_Assignment
 {
     private String AssignmentName;
-    private double[] Student_Marks;
- 
-    
+    private double[] stMarks;
 
     public void inputAssignmentName() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner nameAssign = new Scanner(System.in);
         System.out.print("Enter the Assignment Name: ");
-        AssignmentName = scanner.nextLine();
+        AssignmentName = nameAssign.nextLine();
     }
 
- 
-
-
-     public void getMarks()
+    public void getMarks()
     {
         // put your code here
-       Scanner userInput = new Scanner(System.in); //create a scanner object
-       boolean Valid_Mark = false ;
-       while (!Valid_Mark){
-       System.out.println("Please enter student's marks: ");
-       
-       int Student_Marks = userInput.nextInt(); //Read user Input
-       if(Student_Marks < 0 || Student_Marks >= 30){
-           System.out.println("Student's mark " +Student_Marks+ " is not valid, please input a valid age between 18 and 120");
-        }else{
-            System.out.println("Student's Mark is : " + Student_Marks);
-            Valid_Mark=true;
+        Scanner userInput = new Scanner(System.in); //create a scanner object
+        boolean Valid_Mark = false ;
+        for(int i=0; i< stMarks.length; i++){
+        while (!Valid_Mark){
+            System.out.println("Please enter student's marks: ");
+         double marks = userInput.nextDouble();
+           if(marks >= 0 && marks <= 30){
+               stMarks[i] = marks;
+            }else{
+                System.out.println("Invalid mark.please enter a valid mark between 0 and 30");
+            }
+               
+              //  System.out.println("Student's mark " +Student_Marks+ " is not valid, please input a valid age between 18 and 120");
+            //}else{
+              //  System.out.println("Student's Mark is : " + Student_Marks);
+                //Valid_Mark=true;
+                
+            }
+
         }
-       
     }
 }
-}
-  
+
