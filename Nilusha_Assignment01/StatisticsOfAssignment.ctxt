@@ -1,8 +1,10 @@
 #BlueJ class context
-comment0.target=Statistics_of_Assignment
+comment0.target=StatisticsOfAssignment
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Statistics_of_Assignment\ here.\r\n\r\n\ @author\ Nilusha\r\n\ @version\ 1.0\ 2023.09.01\r\n
 comment1.params=
-comment1.target=void\ inputAssignmentName()
+comment1.target=StatisticsOfAssignment()
 comment2.params=
-comment2.target=void\ getMarks()
-numComments=3
+comment2.target=void\ inputName()
+comment3.params=
+comment3.target=void\ inputMarks()
+numComments=4
