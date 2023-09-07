@@ -7,28 +7,32 @@ import java.util.Scanner;//import scanner class
  * @version 1.0 2023.09.01
  */
 public class StatisticsOfAssignment{
-    private String AssignmentName;
+    private String assignmentName;
     private double[] stMarks;
-    private double mean=0;
+    private double highest;
+    private double lowest;
+    private double mean;
+    private double variance;
+    private double standardDeviation;
     
     public StatisticsOfAssignment(){
        stMarks = new double[2];
        inputName();
        inputMarks();
-       double highest = highestMark();
-       double lowest = lowestMark();
-       double mean = findMean();
-       double variance = findVariance(mean);
+       highest=highestMark();
+       lowest=lowestMark();
+       mean=findMean();
+       findStDeviation(mean);
        System.out.println("The highest mark is: "+highest);
        System.out.println("The lowest mark is: "+lowest);
        System.out.println("The mean of the marks is: "+mean);
-       System.out.println("The variance of the marks is: "+variance);
+       System.out.println("The Standard Deviation of the marks is: "+standardDeviation);
     }
 
     public void inputName() {
         Scanner nameAssign = new Scanner(System.in);
         System.out.print("Enter the Assignment Name: ");
-        AssignmentName = nameAssign.nextLine();
+        assignmentName = nameAssign.nextLine();
     }
 
     public void inputMarks(){
@@ -79,13 +83,15 @@ public class StatisticsOfAssignment{
         return mean/stMarks.length;
     }
     
-public double findVariance(double mean){
+    public double findStDeviation(double mean){
     double sqOfDiff=0;
     for(int i=0;i<stMarks.length;i++){
         double diff = stMarks[i]- mean;
         sqOfDiff +=diff*diff;
             }
-    double variance = sqOfDiff/(stMarks.length-1);
-    return variance;
+    variance = sqOfDiff/(stMarks.length-1);
+    standardDeviation = Math.sqrt(variance);
+    return standardDeviation;
 }
+    
 }
