@@ -8,6 +8,7 @@ import java.util.Scanner;//import scanner class
  */
 public class StatisticsOfAssignment{
     private String assignmentName;
+    private int i;
     private double[] stMarks;
     private double highest;
     private double lowest;
@@ -23,10 +24,7 @@ public class StatisticsOfAssignment{
        lowest=lowestMark();
        mean=findMean();
        findStDeviation(mean);
-       System.out.println("The highest mark is: "+highest);
-       System.out.println("The lowest mark is: "+lowest);
-       System.out.println("The mean of the marks is: "+mean);
-       System.out.println("The Standard Deviation of the marks is: "+standardDeviation);
+       printDetails();
     }
 
     public void inputName() {
@@ -93,5 +91,15 @@ public class StatisticsOfAssignment{
     standardDeviation = Math.sqrt(variance);
     return standardDeviation;
 }
-    
+
+    public void printDetails(){
+       System.out.println("Name of the Assignment is  "+assignmentName);
+       for(int i=0;i<stMarks.length;i++){
+       System.out.println("Marks of student "+(i+1)+"  is : "+stMarks[i]);
+    }
+       System.out.println("The highest mark is: "+highest);
+       System.out.println("The lowest mark is: "+lowest);
+       System.out.println("The mean of the marks is: "+mean);
+       System.out.println("The Standard Deviation of the marks is: "+standardDeviation);
+}
 }

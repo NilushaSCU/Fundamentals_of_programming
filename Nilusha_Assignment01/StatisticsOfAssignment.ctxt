@@ -15,4 +15,6 @@ comment6.params=
 comment6.target=double\ findMean()
 comment7.params=mean
 comment7.target=double\ findStDeviation(double)
-numComments=8
+comment8.params=
+comment8.target=void\ printDetails()
+numComments=9
