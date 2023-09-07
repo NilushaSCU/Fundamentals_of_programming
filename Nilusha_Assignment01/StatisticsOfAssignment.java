@@ -9,6 +9,7 @@ import java.util.Scanner;//import scanner class
 public class StatisticsOfAssignment{
     private String AssignmentName;
     private double[] stMarks;
+    private double mean=0;
     
     public StatisticsOfAssignment(){
        stMarks = new double[2];
@@ -16,10 +17,12 @@ public class StatisticsOfAssignment{
        inputMarks();
        double highest = highestMark();
        double lowest = lowestMark();
-       double sum = mean();
+       double mean = findMean();
+       double variance = findVariance(mean);
        System.out.println("The highest mark is: "+highest);
        System.out.println("The lowest mark is: "+lowest);
-       System.out.println("The mean of the marks is: "+sum);
+       System.out.println("The mean of the marks is: "+mean);
+       System.out.println("The variance of the marks is: "+variance);
     }
 
     public void inputName() {
@@ -68,13 +71,21 @@ public class StatisticsOfAssignment{
       return lowest;
 }
 
-    public double mean (){
-        double sum = 0;
+    public double findMean (){
+        //double sum = 0;
         for(int i=0;i<stMarks.length;i++){
-            sum += stMarks[i];
+            mean += stMarks[i];
         }
-        return sum/stMarks.length;
+        return mean/stMarks.length;
     }
     
-
+public double findVariance(double mean){
+    double sqOfDiff=0;
+    for(int i=0;i<stMarks.length;i++){
+        double diff = stMarks[i]- mean;
+        sqOfDiff +=diff*diff;
+            }
+    double variance = sqOfDiff/(stMarks.length-1);
+    return variance;
+}
 }
