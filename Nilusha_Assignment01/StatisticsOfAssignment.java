@@ -6,17 +6,20 @@ import java.util.Scanner;//import scanner class
  * @author Nilusha
  * @version 1.0 2023.09.01
  */
-public class StatisticsOfAssignment
-{
+public class StatisticsOfAssignment{
     private String AssignmentName;
     private double[] stMarks;
     
     public StatisticsOfAssignment(){
-       stMarks = new double[30];
+       stMarks = new double[2];
        inputName();
        inputMarks();
-       highestMark();
-       lowestMark();
+       double highest = highestMark();
+       double lowest = lowestMark();
+       double sum = mean();
+       System.out.println("The highest mark is: "+highest);
+       System.out.println("The lowest mark is: "+lowest);
+       System.out.println("The mean of the marks is: "+sum);
     }
 
     public void inputName() {
@@ -51,17 +54,27 @@ public class StatisticsOfAssignment
           if(stMarks[i]> highest){
               highest = stMarks[i];
           }
-      }
-      System.out.println("The highest mark is :",+highest);
+                }
+      return highest;
     }
     
      public double lowestMark(){
       double lowest = stMarks[0];
-      for(int i=1;i< stMarks.length;i++ ){
+      for(int i=1;i < stMarks.length;i++ ){
           if(stMarks[i]< lowest){
               lowest = stMarks[i];
           }
       }
-      System.out.println("The lowest mark is :",+lowest);
+      return lowest;
 }
+
+    public double mean (){
+        double sum = 0;
+        for(int i=0;i<stMarks.length;i++){
+            sum += stMarks[i];
+        }
+        return sum/stMarks.length;
+    }
+    
+
 }
