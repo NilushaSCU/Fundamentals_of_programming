@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=StatisticsOfAssignment
-comment0.text=\r\n\ The\ class\ StatisticsOfAssignment\ .\r\n\r\n\ @author\ Nilusha\r\n\ @version\ 1.0\ 2023.09.01\r\n
+comment0.text=\r\n\ The\ class\ StatisticsOfAssignment\ calculates\ statistics\ related\ to\ students\ marks\ in\ an\ Assignment.\r\n\ The\ program\ enables\ user\ to\ input\ name\ of\ the\ Assignemnt\ and\ students\ marks.\r\n\ Then\ it\ computes\ highest\ mark,lowest\ mark,mean\ and\ standard\ deviation\ of\ marks\ of\ the\ students.\r\n\r\n\ @author\ Nilusha\r\n\ @version\ 1.0\ 2023.09.01\r\n
 comment1.params=
 comment1.target=StatisticsOfAssignment()
+comment1.text=\r\nConstructor\ for\ objects\ of\ class\ \ StatisticsOfAssignment\r\n
 comment2.params=
 comment2.target=void\ inputName()
 comment3.params=
